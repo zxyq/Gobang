@@ -1,0 +1,131 @@
+@charset "UTF-8";
+body, ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+body {
+  background: url("../image/woodfloor.jpg");
+  font-family: '微软雅黑';
+  letter-spacing: 3px;
+  overflow: hidden;
+}
+
+#canvas {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  transform: rotateY(90deg);
+  opacity: 0;
+  transition: opacity .5s linear;
+  cursor: pointer;
+}
+
+.pop-up {
+  width: 400px;
+  height: 400px;
+  background: url("../image/wood.jpg");
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: rotateY(90deg);
+  transition: transform .5s linear .5s;
+}
+
+.pop-up .win {
+  position: absolute;
+  font-size: 50px;
+  color: #fff;
+  text-shadow: 0 2px 4px #444;
+  margin: auto;
+  top: 150px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.pop-up .new-game {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.pop-up .qipu {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.content.active {
+  transform: rotateY(0);
+  opacity: 1;
+}
+
+.content.active .pop-up {
+  transform: rotateY(0);
+}
+
+.new-game, .qipu, .save, .res {
+  width: 158px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+  background-image: linear-gradient(#D57F29, #AE6822);
+  font-weight: 700;
+  color: #fff;
+  border-top: 1px solid #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+  border-radius: 18px;
+  text-shadow: 0 1px 1px #444;
+  cursor: pointer;
+  box-shadow: 0 2px 2px rgba(64, 60, 55, 0.5);
+}
+
+.new-game:hover, .qipu:hover, .save:hover, .res:hover {
+  background-image: linear-gradient(#f5922f, #c87726);
+}
+
+.saveqipu {
+  height: 300px;
+  width: 200px;
+  background-image: url("../image/wood.jpg");
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+  transform: translateX(250px);
+  transition: transform .5s linear;
+}
+
+.saveqipu .save, .saveqipu .res {
+  margin: 0 auto;
+  margin-top: 70px;
+}
+.save{
+  display: block;
+  text-decoration: none;
+}
+.saveqipu.active {
+  transform: translateX(0);
+}
